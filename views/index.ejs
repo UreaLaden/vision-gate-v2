@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="./styles/base.css">
+  <link rel="stylesheet" href="./styles/layout.css">
+  <link rel="stylesheet" href="./styles/modules.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vision Gate</title>
+</head>
+
+<body class="home">
+  <%- include('./layout/header.ejs') %>
+  <main>
+    <h1>WELCOME TO VISION GATE</h1>
+    <div class="wrapper">
+      <div class="search-form">
+        <form action="/search" method="POST">
+        <fieldset class="input-fields">
+          <label>Create your very own vision board. Enter your username or create an account below. Then search for keywords that align with your goals such as travel, romance, finance, etc.</label>
+            <input class="input" type="text" name="username" required placeholder="Your username" value="">
+            <input class="input" type="text" name="search_query" required placeholder="Vision search">
+            <input class="button" type="submit" value="search">
+          </fieldset>
+        </form>
+        <form action="/userboard" method="POST">
+          <fieldset class="input-fields">
+            <input class="button" type="submit" value="My Board">
+            <input type="text" hidden name="username" name="<%= hpElements.users[0].username %>">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="quote">
+      <h2> "<%= hpElements.quote.quote %>" </h2>
+      <h3> - <%= hpElements.quote.author %></h3>
+    </div>
+    <div class="vision-board-about">
+      <h4>What is a Vision Board?</h4>
+      <p>A vision board is a visualization tool made up of inspirational pictures and words that are in alignment with your goals and dreams. Traditionally vision boards are a collage made with cork or poster boards so you can hang them up easily. By looking at visual representations of your aspirations each day you’re more easily able to achieve your goals. When you have a visual representation of your goals right in front of you, it becomes easier to embody the feeling of your dreams already being true. </p>
+      <p>Vision Gate enables you to create your vision board in a digital space. You can keep your vision board open on your computer through the day as you work and revisit it to stay in alignment with your goals. You can view your vision board on your mobile device when you are on the go. The practice of visualization is powerful in creating self motivation and focus. </p>
+      <p>To get started, simply create an account. Then search for keywords that connect back to your dreams and aspirations such as travel, dream home, finance, health, romance, or career goals. Pin your favorite photos to your very own digital vision board. Edit your images with a description and a deadline to stay on track. Mark your goals as complete once you have accomplished them.</p>
+    </div>
+  </main>
+  <%- include('./layout/footer.ejs') %>
+
+<script src = "app.js"></script>
+
+</body>
+</html>
