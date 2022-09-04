@@ -28,7 +28,6 @@
     "unirest": "^0.6.0"
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0",
     "nodemon": "^2.0.19"
   }
 }
